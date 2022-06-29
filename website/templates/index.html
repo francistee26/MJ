@@ -1,0 +1,90 @@
+{% extends "base.html" %} 
+
+{% block content %}
+<section data-barba="container" data-barba-namespace="logo">  
+       <main>
+         <section class="mountain slide">
+           <div class="hero-img">
+             <img src="{{ url_for('static', filename='/images/MJ2.png') }}" />
+             <div class="reveal-img"></div>
+           </div>
+           <div class="hero-desc">
+             <div class="title">
+               <h2>
+                 <div class="james">James<span class="mountain-span">Kamara</span><br/></div><span
+                   class="and"
+                   >&</span
+                 >
+               </h2>
+               <h2><div class="mary"><span class="mountain-span">Mary</span> Kamara</div></h2>
+               <div class="church">
+                 <h3 class="wed">
+                   Church <span class="mountain-span">Wedding</span>
+                 </h3>
+               </div>
+               <div class="main-page-date">
+                 <h4 class="date2">
+                   <span class="mountain-span">Thursday,</span> 25 August 2022
+                 </h4>
+               </div>
+               <div class="title-swipe t-swipe1"></div>
+             </div>
+             <div class="mountain-p">
+               <p>
+                 Church Name: Blessed Virgin Mary <br>
+                 Church Ceremony Start Time: 3:30pm <br>
+               </p>
+               <div class="address">Address:<a href="https://www.google.com/maps/place/mothers+home/@39.9223078,-75.2643246,17z/data=!4m13!1m7!3m6!1s0x89c6c3ef60b9d91b:0x5206c3ea9fcca42c!2s1101+Main+St,+Darby,+PA+19023!3b1!8m2!3d39.9217456!4d-75.2638797!3m4!1s0x89c6c3e5868b2697:0xadb6642f115654fa!8m2!3d39.9221189!4d-75.2630134" target="_blank"> 1101 Main St, Darby, PA, 19023</a></div> 
+             </div>
+             <div class="mountain-p">
+               <p>              
+                 Reception Party Start Time: 7:30pm <br>
+                 Cocktail Start Time: 6:30pm <br>
+               </p>
+               <div class="address"> Address:<a href="https://www.google.com/maps/place/3416+Philadelphia+Pike,+Claymont,+DE+19703/@39.8014096,-75.4600531,17z/data=!3m1!4b1!4m5!3m4!1s0x89c6e4737ca9944d:0xf5920d7549bd0445!8m2!3d39.8014096!4d-75.4600531" target="_blank"> 3416 Philadelphia Pike, Claymont, DE, 19703</a> </div>
+             </div>
+             <a class="explore mountain-exp" id="login" href="/login">RSVP</a>
+             <p>For more info keep scrolling</p>
+             <div class="reveal-text"></div>
+           </div>
+         </section>
+         <section class="hike slide">
+           <div class="hero-img">
+             <img src="{{ url_for('static', filename='/images/MJ4.png') }}"/>
+             <div class="reveal-img"></div>
+           </div>
+           <div class="hero-desc">
+             <div class="title">
+               <h2>Your <span class="hike-span">love</span> is the <span class="hike-span">light</span> that <span class="hike-span">illuminates</span>  the darkest <span class="hike-span">part</span> of my <span class="hike-span">heart</span></h2>
+               <div class="title-swipe t-swipe2"></div>
+             </div>
+             <p>
+               Attendance is by invite only and no kids allowed
+             </p>
+             <a class="explore hike-exp" id="rsvp" href="/login">RSVP</a>
+             <p>For more info keep scrolling</p>
+             <div class="reveal-text"></div>
+           </div>
+         </section>
+         <section class="fashion slide">
+           <div class="hero-img">
+             <img src="{{ url_for('static', filename='/images/MJ1.png') }}" />
+             <div class="reveal-img"></div>
+           </div>
+           <div class="hero-desc">
+             <div class="title">
+               <h2>
+                 <span class="fashion-span">Love</span> isn't love if it were always <span class="fashion-span">perfect;</span> our love is like a  <span class="fashion-span">gem</span> that <span class="fashion-span">we</span> are constantly <span class="fashion-span">refining</span> into something more <span class="fashion-span">beautiful</span> 
+               </h2>
+               <div class="title-swipe t-swipe3"></div>
+             </div>
+             <p>
+               Attendance is by invite only and no kids allowed
+             </p>
+             <a id="rsvp" href="/login" class="explore fashion-exp">RSVP</a>
+             <div class="reveal-text"></div>
+           </div>
+         </section>
+       </main>
+    </section>
+{% endblock %}

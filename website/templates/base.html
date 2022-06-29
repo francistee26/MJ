@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <title>Travel Website</title> -->
+    <title>{% block title %}James and Mary Wedding{% endblock %}</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='/images/wedding-couple.png') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body id="home-body-color" data-barba="wrapper">   
+{% block head %}
+    <header class="nav-header">
+         {% if user.is_authenticated %}
+           <div class="date"><h3 class="date1 rsvp-date">Thursday, 25 August 2022</h3></div>
+           <h1><a href="/rsvpform" id="logo" class="rsvp-title">J&M Wedding</a></h1>
+           {% if user.id == 1 or user.id == 2%}
+            <div class="date"><h3 class="date1 rsvp-date"><a class="burger tog" href="/admin">Admin</a></h3></div>
+           {% endif %}
+           <div class="date appear"><h3 class="date1 rsvp-date burger"><a class="tog" href="/logout">Logout</a> </h3></div>
+         {% else %}
+           <div class="date"><h3 class="date1 rsvp-date">Thursday, 25 August 2022</h3></div>
+           <h1><a href="/" id="logo" class="rsvp-title">J&M Wedding</a></h1>
+           <div class="burger">
+             <div class="line1"></div>
+             <div class="line2"></div>
+           </div>
+         {% endif %}
+    </header>
+{% endblock %}
+    {% with messages = get_flashed_messages(with_categories=true) %} 
+       {% if messages %} 
+         {% for category, message in messages %} 
+           {% if category =='error' %}
+             <div class="move-front center-m alert alert-danger alert-dismissable fade show" role="alert">
+               {{message}}
+               <center><button type="button" class="close" data-dismiss="alert">
+                 &times;
+               </button></center>
+             </div>
+           {% else %}
+             <div class="move-front alert alert-success alert-dismissable fade show" role="alert">
+               {{message}}
+               <center><button type="button" class="close" data-dismiss="alert">
+                 &times;
+               </button></center>
+             </div>
+           {% endif %} 
+         {% endfor %} 
+       {% endif %} 
+    {% endwith %}
+
+    {% block content %}
+    {% endblock %}
+    <nav class="nav-bar">
+      <ul class="nav-links">
+        <h3><a class="faba" href="https://www.instagram.com/jameskamara414/"><i class="fab fa-instagram-square share">  jameskamara414</i> </a></h3>
+        <h3><a class="faba" href="https://www.instagram.com/mary_jay_tee/"><i class="fab fa-instagram-square share">  mary_jay_tee</i> </a></h3>
+      </ul>
+      <div class="contact">
+        <h2>Stay in touch.</h2>
+        <p>
+          If you have any questions contact us using our instagrams
+        </p>
+      </div>
+    </nav>
+    <div class="cursor">
+      <span class="cursor-text"></span>
+    </div>
+    <div class="swipe swipe1"></div>
+    <div class="swipe swipe2"></div>
+    <div class="swipe swipe3"></div>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"
+      integrity="sha256-2p2tRZlPowp3P/04Pw2rqVCSbhyV/IB7ZEVUglrDS/c="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"
+      integrity="sha256-XBVALc3QsDSQiDtiaBwNZ2rxCJTHzlUhhlDQ84J8bw8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"
+      integrity="sha256-+9YNuItWuR4sbqeaNiJOxG0BvptYz4fbUXbIZoH5Jwo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"
+      integrity="sha256-3arngJBQR3FTyeRtL3muAGFaGcL8iHsubYOqq48mBLw="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='app.js') }}"
+    ></script>
+  </body>
+</html>
